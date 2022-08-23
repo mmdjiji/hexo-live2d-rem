@@ -7,15 +7,16 @@
 ![](assets/preview.png)
 
 ## Usage
-Use the following command to initialize the plugin:
-```bash
-$ hexo live2d-rem -i
-```
 
-Then add this to `_config.yml`:
+Add this to `_config.yml`:
 ```yml
 live2d_rem:
   enable: true
+```
+
+Then use the following command to initialize the plugin:
+```bash
+$ hexo live2d-rem -i
 ```
 
 After that, when you run `hexo generate`, the page will add Rem automatically.

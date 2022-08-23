@@ -20,11 +20,11 @@ hexo.extend.console.register('live2d-rem', 'Generate JiJi\'s wife -- Rem', optio
   if (args.i) {
     if (!fs.existsSync(path.join(this.source_dir, '/live2d/message.json'))) {
       fs.copyDir(path.join(__dirname, 'live2d'), path.join(this.source_dir, '/live2d/'));
+      log.info('Initialization succeeded');
     }
   } else if (args.r) {
     if (fs.existsSync(path.join(this.source_dir, '/live2d/message.json'))) {
       fs.rmdir(path.join(this.source_dir, '/live2d'));
-      
       log.info('The live2d-rem has been removed');
     } else {
       log.info('No live2d-rem to remove');
@@ -54,7 +54,7 @@ hexo.extend.filter.register('after_render:html', function (html) {
   let result = html;
   if ((/([\n\r\s\t]*<\/body>)/i).test(html)) {
     const lastIndex = html.lastIndexOf('</body>');
-    result = `${html.substring(0, lastIndex)}${addHtml}${html.substring(lastIndex, html.length)}`; // eslint-disable-line no-magic-numbers
+    result = `${html.substring(0, lastIndex)}${addHtml}${html.substring(lastIndex, html.length)}`;
   }
   return result;
 });

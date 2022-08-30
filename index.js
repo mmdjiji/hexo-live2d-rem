@@ -52,8 +52,8 @@ hexo.extend.filter.register('after_render:html', function (html) {
   <script type="text/javascript" src="/live2d/js/message.js"></script>
   <!-- https://github.com/mmdjiji/hexo-live2d-rem -->`;
   let result = html;
-  if ((/([\n\r\s\t]*<\/body>)/i).test(html)) {
-    const lastIndex = html.lastIndexOf('</body>');
+  if ((/([\n\r\s\t]*<\/head>)/i).test(html)) {
+    const lastIndex = html.lastIndexOf('</head>');
     result = `${html.substring(0, lastIndex)}${addHtml}${html.substring(lastIndex, html.length)}`;
   }
   return result;

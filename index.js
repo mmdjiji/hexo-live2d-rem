@@ -1,9 +1,10 @@
 const fs = require('hexo-fs');
 const path = require('path');
-const log = require('hexo-log')({
-  debug: false,
-  silent: false
-});
+// const log = require('hexo-log')({
+//   debug: false,
+//   silent: false
+// });
+// [Bug] ERROR Plugin load failed: hexo-live2d-rem; TypeError: require(...) is not a function
 
 const options = {
   options: [
@@ -14,20 +15,20 @@ const options = {
 
 hexo.extend.console.register('live2d-rem', 'Generate JiJi\'s wife -- Rem', options, function (args) {
   if (!this?.config?.live2d_rem?.enable) {
-    log.info('Please enable live2d-rem in _config.yml first!');
+    // log.info('Please enable live2d-rem in _config.yml first!');
     return;
   }
   if (args.i) {
     if (!fs.existsSync(path.join(this.source_dir, '/live2d/message.json'))) {
       fs.copyDir(path.join(__dirname, 'live2d'), path.join(this.source_dir, '/live2d/'));
-      log.info('Initialization succeeded');
+      // log.info('Initialization succeeded');
     }
   } else if (args.r) {
     if (fs.existsSync(path.join(this.source_dir, '/live2d/message.json'))) {
       fs.rmdir(path.join(this.source_dir, '/live2d'));
-      log.info('The live2d-rem has been removed');
+      // log.info('The live2d-rem has been removed');
     } else {
-      log.info('No live2d-rem to remove');
+      // log.info('No live2d-rem to remove');
     }
   }
 });

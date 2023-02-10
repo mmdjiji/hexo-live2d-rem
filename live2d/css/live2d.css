@@ -51,7 +51,7 @@
   border: 2px solid rgba(75, 127, 199, 0.9);
   border-radius: 5px;
   background-color: rgba(74, 59, 114, 0.9);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   text-overflow: ellipsis;
   text-transform: uppercase;
@@ -967,7 +967,7 @@
     filter: hue-rotate(360deg);
   }
 }
-#rembox { width: 100vw; position: fixed; bottom: 5vh; pointer-events: none; z-index: 114514; }
+#rembox { width: 100vw; position: fixed; bottom: 0vh; pointer-events: none; z-index: 114514; }
 #rembox>div { width: 960px; height: 280px; margin: 0 auto; position: relative; }
 #live2d {
   width: 250px;
@@ -976,14 +976,10 @@
   right: -18vw;
   transition: 1s;
 }
-@media(max-width: 1700px) { #live2d{ right: -18vw; } .message{ right: -18vw; } }
-@media(max-width: 1500px) { #live2d{ right: -14vw; } .message{ right: -15vw; } }
-@media(max-width: 1400px) { #live2d{ right: -12vw; } .message{ right: -10vw; } }
-@media(max-width: 1200px) { #live2d{ right: -10vw; } .message{ right: -8vw; } }
-@media(max-width: 1100px) { #live2d{ right: -8vw; } .message{ right: -4vw; } }
+@media(max-width: 1800px) { #live2d{ margin-right: 2rem; } .message{ margin-right: 2rem; } }
 @media(max-width: 1000px) {
-  #rembox{ bottom: 0vh; }
+  #rembox{ bottom: -7.5vh; }
   #rembox>div{ width: 100vw; bottom: 0vh; }
-  #live2d { right: -8vw; transform: scale(0.7); }
-  .message{ right: -8vw; }
+  #live2d { margin-right: 2rem; transform: scale(0.7); }
+  .message{ margin-right: 2rem; margin-bottom: -2rem !important; }
 }

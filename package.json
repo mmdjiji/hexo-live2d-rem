@@ -13,7 +13,7 @@
     "anime"
   ],
   "dependencies": {
-    "hexo-fs": "^4.0.0",
+    "hexo-fs": "^5.0.0",
     "hexo-log": "^4.0.1"
   },
   "repository": {
